@@ -1,0 +1,17 @@
+<h1>{{string1 | uppercase}}</h1>
+<h2>{{string2 | lowercase}}</h2>
+
+<p>Today is {{today}}</p>
+<p>Today is {{today | date}}</p>
+<p>Today is {{today | date:'fullDate'}}</p>
+<p>Today is {{today | date:'hh:mm:ss'}}</p>
+<p>Today is {{today | date: 'h:mm:s' }}</p>
+
+<p>{{currency | currency}}</p>
+<p>{{currency | currency : 'INR'}}</p>
+
+<p>{{percentage | percent : '2.1'}}</p>
+
+
+<!-- I need a output with the title which should add description o/p: title + description -->
+<h2>{{customepipetitle | append : ', This is the appended function of custom pipe'}}</h2>

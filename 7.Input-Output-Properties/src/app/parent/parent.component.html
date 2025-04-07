@@ -1,0 +1,6 @@
+<!-- Parent to Child -->
+<app-child [data]="123"></app-child>
+
+
+<!-- Child to Parent  -->
+<app-child-2 (myData)="childData($event)"></app-child-2>
