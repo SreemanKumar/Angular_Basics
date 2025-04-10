@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { error } from 'node:console';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { error } from 'node:console';
   standalone: false,
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = '8.Async-Properties';
 
   constructor() {
@@ -31,5 +32,17 @@ export class AppComponent {
   async displayData() {
     let response = await this.fetchData();
     console.log(response)
+  }
+
+  myObservable = new Observable((observer) => {
+    console.log('Observable Starts')
+    observer.next('1')
+    observer.next('2')
+  });
+
+  ngOnInit() {
+    this.myObservable.subscribe((val) => {
+      console.log(val);
+    })
   }
 }
